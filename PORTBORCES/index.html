@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karylle Borces | Student Developer &amp; Aspiring Frontend Engineer</title>
+
+  <!-- Material Symbols Outlined -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS v3 -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  
+  <!-- Tailwind Configuration -->
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface": "#09090B",
+            "surface-dim": "#09090B",
+            "surface-bright": "#272733",
+            "surface-container-lowest": "#000000",
+            "surface-container-low": "#121217",
+            "surface-container": "#18181F",
+            "surface-container-high": "#272733",
+            "surface-container-highest": "#3F3F4E",
+            
+            "on-surface": "#F8FAFC",
+            "on-surface-variant": "#94A3B8",
+            "inverse-surface": "#F8FAFC",
+            "inverse-on-surface": "#09090B",
+            
+            "outline": "#4C4C5D",
+            "outline-variant": "#272733",
+            
+            "primary": "#A855F7",
+            "on-primary": "#FFFFFF",
+            "primary-container": "#7E22CE",
+            "on-primary-container": "#F3E8FF",
+            "primary-fixed": "#F3E8FF",
+            "primary-fixed-dim": "#C084FC",
+            
+            "secondary": "#D946EF",
+            "on-secondary": "#FFFFFF",
+            "secondary-container": "#701A75",
+            "on-secondary-container": "#F5D0FE",
+            "secondary-fixed": "#FDF4FF",
+            "secondary-fixed-dim": "#F0ABFC",
+            
+            "tertiary": "#C084FC",
+            "on-tertiary": "#FFFFFF",
+            
+            "error": "#F43F5E",
+            "on-error": "#FFFFFF",
+            "error-container": "#4C0519",
+            "on-error-container": "#FDA4AF"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "space-xl": "2.5rem",
+            "gutter-mobile": "1rem",
+            "space-lg": "1.5rem",
+            "margin": "2rem",
+            "margin-mobile": "1rem",
+            "space-sm": "0.5rem",
+            "space-xs": "0.25rem",
+            "gutter": "1.5rem",
+            "space-md": "1rem"
+          },
+          fontFamily: {
+            "headline-sm": ["Inter"],
+            "body-lg": ["Inter"],
+            "label-sm": ["Inter"],
+            "headline-xl-mobile": ["Inter"],
+            "headline-md": ["Inter"],
+            "label-md": ["Inter"],
+            "headline-xl": ["Inter"],
+            "headline-lg": ["Inter"],
+            "code-sm": ["JetBrains Mono"],
+            "headline-lg-mobile": ["Inter"],
+            "body-md": ["Inter"],
+            "body-sm": ["Inter"]
+          },
+          fontSize: {
+            "headline-sm": ["18px", { lineHeight: "24px", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.025em", fontWeight: "600" }],
+            "headline-xl-mobile": ["34px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "800" }],
+            "headline-md": ["22px", { lineHeight: "28px", letterSpacing: "-0.015em", fontWeight: "700" }],
+            "label-md": ["14px", { lineHeight: "20px", fontWeight: "500" }],
+            "headline-xl": ["48px", { lineHeight: "56px", letterSpacing: "-0.025em", fontWeight: "800" }],
+            "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "code-sm": ["13px", { lineHeight: "20px", fontWeight: "400" }],
+            "headline-lg-mobile": ["26px", { lineHeight: "32px", letterSpacing: "-0.015em", fontWeight: "700" }],
+            "body-md": ["15px", { lineHeight: "24px", fontWeight: "400" }],
+            "body-sm": ["13px", { lineHeight: "20px", fontWeight: "400" }]
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-surface text-on-surface antialiased selection:bg-primary selection:text-on-primary min-h-screen flex flex-col font-body-md">
+
+  <!-- ================= TOP NAVIGATION ================= -->
+  <header class="top-0 sticky z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant/50 shadow-sm transition-colors">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 w-full">
+      <a class="flex items-center gap-2 group transition-all duration-200 ease-in-out active:scale-95" href="#home">
+        <span class="text-headline-sm font-headline-sm font-bold text-on-surface tracking-tight">Karylle Borces</span>
+        <span class="font-code-sm text-code-sm px-2 py-0.5 rounded-lg bg-surface-container-high text-primary font-semibold border border-primary/30">&lt;StudentDev /&gt;</span>
+      </a>
+
+      <nav aria-label="Primary Navigation" class="hidden md:flex items-center space-x-6">
+        <a class="nav-link text-primary font-label-md text-label-md border-b-2 border-primary pb-1 transition-colors duration-150 font-semibold neon-text" href="#home">Home</a>
+        <a class="nav-link text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors duration-150" href="#about">About</a>
+        <a class="nav-link text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors duration-150" href="#skills">Skills</a>
+        <a class="nav-link text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors duration-150" href="#projects">Projects</a>
+        <a class="nav-link text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors duration-150" href="#contact">Contact</a>
+      </nav>
+
+      <div class="hidden sm:flex items-center gap-3">
+        <a aria-label="GitHub Profile" class="p-2 text-on-surface-variant hover:text-primary transition-colors duration-150 rounded-lg hover:bg-surface-container-high" href="https://github.com/borceskarylle" rel="noopener noreferrer" target="_blank" title="GitHub Repository Profile">
+          <span class="material-symbols-outlined" data-icon="code">code</span>
+        </a>
+        <a class="text-primary font-label-md text-label-md px-3.5 py-1.5 rounded-lg border border-primary/50 hover:bg-primary/10 hover:border-primary transition-colors duration-150 font-semibold" href="#contact">Contact</a>
+        <a class="inline-flex items-center gap-1.5 bg-primary-container text-on-primary font-label-md text-label-md px-3.5 py-1.5 rounded-lg shadow-[0_0_15px_rgba(126,34,206,0.4)] hover:bg-primary hover:shadow-[0_0_20px_rgba(168,85,247,0.6)] transition-all duration-200 active:scale-95" download="Karylle_Borces_Resume.pdf" href="assets/resume.pdf">
+          <span class="material-symbols-outlined text-[18px]" data-icon="terminal">terminal</span>
+          <span>Resume</span>
+        </a>
+      </div>
+
+      <div class="flex md:hidden items-center">
+        <button aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle navigation menu" class="p-2 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" id="mobile-menu-btn" type="button">
+          <span class="material-symbols-outlined text-2xl" data-icon="menu" id="menu-icon">menu</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="hidden md:hidden border-t border-outline-variant/30 bg-surface px-4 pt-3 pb-6 space-y-2" id="mobile-menu">
+      <a class="mobile-nav-link block px-3 py-2 rounded-lg font-label-md text-label-md text-primary bg-surface-container font-semibold" href="#home">Home</a>
+      <a class="mobile-nav-link block px-3 py-2 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-primary hover:bg-surface-container-low" href="#about">About</a>
+      <a class="mobile-nav-link block px-3 py-2 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-primary hover:bg-surface-container-low" href="#skills">Skills</a>
+      <a class="mobile-nav-link block px-3 py-2 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-primary hover:bg-surface-container-low" href="#projects">Projects</a>
+      <a class="mobile-nav-link block px-3 py-2 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-primary hover:bg-surface-container-low" href="#contact">Contact</a>
+      <div class="pt-3 border-t border-outline-variant/20 flex flex-col gap-2">
+        <a class="flex items-center justify-center gap-2 w-full py-2 bg-primary-container text-on-primary rounded-lg font-label-md text-label-md shadow-[0_0_15px_rgba(126,34,206,0.4)]" href="assets/resume.pdf">
+          <span class="material-symbols-outlined text-[18px]" data-icon="description">description</span>
+          <span>Download Resume</span>
+        </a>
+        <a class="flex items-center justify-center gap-2 w-full py-2 bg-surface-container-high text-on-surface rounded-lg font-label-md text-label-md border border-outline-variant/40" href="https://github.com/borceskarylle" rel="noopener noreferrer" target="_blank">
+          <span class="material-symbols-outlined text-[18px]" data-icon="code">code</span>
+          <span>github.com/borceskarylle</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <main class="flex-grow max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+
+    <!-- HERO -->
+    <section class="pt-10 md:pt-16 pb-14 border-b border-outline-variant/30" id="home">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+
+        <!-- Hero Text -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2.5 px-3 py-1.5 rounded-full bg-secondary/10 border border-secondary/30 text-secondary text-label-sm font-label-sm shadow-[0_0_10px_rgba(217,70,239,0.2)]">
+            <span class="relative flex h-2.5 w-2.5">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-secondary"></span>
+            </span>
+            <span>Open for summer 2025 internships &amp; entry-level roles</span>
+          </div>
+
+          <h1 class="text-headline-xl-mobile md:text-headline-xl font-headline-xl-mobile md:font-headline-xl text-on-surface tracking-tight">
+            Hi, I’m <span class="text-primary neon-text underline decoration-primary decoration-4 underline-offset-4">Karylle MJ A. Borces</span>. Computer Science student &amp; aspiring frontend engineer.
+          </h1>
+
+          <p class="text-body-md md:text-body-lg font-body-md md:font-body-lg text-on-surface-variant max-w-xl">
+            Building responsive, accessible web applications with modern HTML, CSS, JavaScript, and React. Passionate about performant code, thoughtful design systems, and inclusive user experiences.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-3 pt-2">
+            <a class="inline-flex items-center gap-2 px-5 py-2.5 bg-primary-container text-on-primary font-label-md text-label-md rounded-lg shadow-[0_0_15px_rgba(126,34,206,0.4)] hover:bg-primary hover:shadow-[0_0_20px_rgba(168,85,247,0.6)] transition-all duration-200 active:scale-95" href="#projects">
+              <span>View Projects</span>
+              <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+            </a>
+            <a class="inline-flex items-center gap-2 px-5 py-2.5 bg-surface-container-high text-on-surface font-label-md text-label-md rounded-lg border border-outline-variant/50 hover:bg-surface-container-highest hover:border-primary/50 transition-all duration-200" href="#contact">
+              <span class="material-symbols-outlined text-[18px]" data-icon="mail">mail</span>
+              <span>Get in Touch</span>
+            </a>
+            <a class="inline-flex items-center gap-1.5 px-4 py-2.5 text-on-surface-variant hover:text-primary font-label-md text-label-md transition-colors" download="Karylle_Borces_Resume.pdf" href="assets/resume.pdf">
+              <span class="material-symbols-outlined text-[18px]" data-icon="download">download</span>
+              <span>Download Resume</span>
+            </a>
+          </div>
+
+          <div class="grid grid-cols-3 gap-3 pt-4 border-t border-outline-variant/30 max-w-lg">
+            <div class="p-3 bg-surface-container-low rounded-lg border border-outline-variant/40">
+              <span class="block text-label-sm font-label-sm text-on-surface-variant">Academic Standing</span>
+              <span class="text-headline-sm font-headline-sm font-bold text-on-surface">Sophomore</span>
+              <span class="block font-code-sm text-[11px] text-outline">B.S. CompSci</span>
+            </div>
+            <div class="p-3 bg-surface-container-low rounded-lg border border-outline-variant/40">
+              <span class="block text-label-sm font-label-sm text-on-surface-variant">Cumulative GPA</span>
+              <span class="text-headline-sm font-headline-sm font-bold text-secondary neon-text">3.8 / 4.0</span>
+              <span class="block font-code-sm text-[11px] text-outline">Dean's Honor Roll</span>
+            </div>
+            <div class="p-3 bg-surface-container-low rounded-lg border border-outline-variant/40">
+              <span class="block text-label-sm font-label-sm text-on-surface-variant">Portfolio Depth</span>
+              <span class="text-headline-sm font-headline-sm font-bold text-primary neon-text">10+</span>
+              <span class="block font-code-sm text-[11px] text-outline">Course &amp; Solo Labs</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Image Card with MOVING NEON GLOW -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="relative w-full max-w-sm">
+            
+            <!-- The spinning neon background container -->
+            <div class="neon-glow-wrapper">
+              
+              <!-- The inner container holding your photo and tags -->
+              <div class="neon-glow-inner p-4">
+                
+                <!-- Photo Container -->
+                <div class="relative overflow-hidden rounded-xl bg-surface-container-low aspect-[4/4.5] flex items-center justify-center">
+                  <img
+                    id="profile-photo"
+                    src="img/pic.jpg"
+                    alt="Portrait of Karylle MJ A. Borces"
+                    class="w-full h-full object-cover object-center z-10 relative"
+                    width="800"
+                    height="900"
+                    loading="eager"
+                    decoding="async">
+
+                  <!-- Dashed placeholder (hidden unless image fails) -->
+                  <div id="img-placeholder"
+                       class="hidden absolute inset-0 flex-col items-center justify-center gap-2 p-6 text-center border-2 border-dashed border-outline-variant/60 rounded-xl bg-surface-container-low/40 z-0">
+                    <span class="material-symbols-outlined text-[44px] text-outline">add_photo_alternate</span>
+                    <span class="font-label-md text-label-md font-semibold text-on-surface">Drop your photo here</span>
+                    <span class="font-code-sm text-code-sm text-outline">assets/karylle-profile.jpg</span>
+                  </div>
+                </div>
+
+                <!-- Tech Tags -->
+                <div class="flex flex-wrap items-center justify-between gap-2 mt-4 px-1">
+                  <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container text-on-surface-variant text-label-sm font-code-sm border border-outline-variant/40">
+                    <span class="material-symbols-outlined text-primary text-[16px]" data-icon="deployed_code">deployed_code</span>
+                    <span>React</span>
+                  </div>
+                  <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container text-on-surface-variant text-label-sm font-code-sm border border-outline-variant/40">
+                    <span class="material-symbols-outlined text-primary text-[16px]" data-icon="palette">palette</span>
+                    <span>Tailwind</span>
+                  </div>
+                  <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container text-on-surface-variant text-label-sm font-code-sm border border-outline-variant/40">
+                    <span class="material-symbols-outlined text-primary text-[16px]" data-icon="data_object">data_object</span>
+                    <span>TypeScript</span>
+                  </div>
+                  <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container text-on-surface-variant text-label-sm font-code-sm border border-outline-variant/40">
+                    <span class="material-symbols-outlined text-primary text-[16px]" data-icon="commit">commit</span>
+                    <span>Git</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="py-14 border-b border-outline-variant/30" id="about">
+      <div class="space-y-2 mb-8">
+        <div class="inline-flex items-center gap-1.5 font-code-sm text-code-sm text-primary font-semibold">
+          <span class="material-symbols-outlined text-[16px]" data-icon="account_circle">account_circle</span>
+          <span>01. BACKGROUND &amp; GOALS</span>
+        </div>
+        <h2 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg-mobile md:font-headline-lg text-on-surface">About Me</h2>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <div class="lg:col-span-7 space-y-6">
+          <div class="tier-card rounded-xl p-6 space-y-4">
+            <h3 class="text-headline-md font-headline-md text-on-surface flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary" data-icon="school">school</span>
+              Student Journey &amp; Passion
+            </h3>
+            <p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+              I am a university student majoring in <strong>Computer Science</strong> with a strong affinity for human-computer interaction, front-end architecture, and web accessibility (WCAG). I believe code should not just work under ideal conditions—it should be responsive, intuitive, and welcoming to all users across devices.
+            </p>
+            <p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+              When I'm not in lectures or debugging lab assignments, I build personal projects that bridge theoretical computer science principles with practical browser technology.
+            </p>
+            <div class="pt-3 border-t border-outline-variant/30">
+              <h4 class="text-label-md font-label-md font-semibold text-on-surface mb-2 flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-secondary text-[18px]" data-icon="sync">sync</span>
+                What I'm Currently Learning:
+              </h4>
+              <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-body-sm font-body-sm text-on-surface-variant">
+                <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-[16px]" data-icon="check_circle">check_circle</span>Full-stack web fundamentals</li>
+                <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-[16px]" data-icon="check_circle">check_circle</span>Data structures &amp; Algorithms</li>
+                <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-[16px]" data-icon="check_circle">check_circle</span>Deploying static &amp; cloud apps</li>
+                <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-[16px]" data-icon="check_circle">check_circle</span>Accessible UI tree &amp; ARIA standards</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 space-y-4">
+          <div class="tier-card rounded-xl p-6">
+            <h3 class="text-headline-sm font-headline-sm text-on-surface mb-4 flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary" data-icon="timeline">timeline</span>
+              Education &amp; Milestones
+            </h3>
+            <div class="relative pl-6 space-y-6 before:absolute before:left-2 before:top-2 before:bottom-2 before:w-0.5 before:bg-outline-variant/50">
+              <div class="relative group">
+                <div class="absolute -left-[27px] top-1.5 h-3 w-3 rounded-full bg-primary shadow-[0_0_8px_rgba(168,85,247,0.8)] ring-4 ring-surface-container-low"></div>
+                <div class="flex items-center justify-between">
+                  <h4 class="text-label-md font-label-md font-semibold text-on-surface">B.S. in Computer Science</h4>
+                  <span class="text-label-sm font-code-sm text-primary font-medium">Exp. May 2027</span>
+                </div>
+                <p class="text-body-sm font-body-sm text-on-surface-variant">State University • GPA 3.8 / 4.0</p>
+                <div class="mt-1 inline-block px-2 py-0.5 bg-secondary/10 text-secondary border border-secondary/20 text-label-sm font-label-sm rounded">Dean’s Honor List (All Semesters)</div>
+              </div>
+              <div class="relative group">
+                <div class="absolute -left-[27px] top-1.5 h-3 w-3 rounded-full bg-outline ring-4 ring-surface-container-low"></div>
+                <div class="flex items-center justify-between">
+                  <h4 class="text-label-md font-label-md font-semibold text-on-surface">Web Dev Bootcamp &amp; Cert</h4>
+                  <span class="text-label-sm font-code-sm text-outline">Summer 2024</span>
+                </div>
+                <p class="text-body-sm font-body-sm text-on-surface-variant">Full-Stack Curriculum (300+ Hours)</p>
+                <p class="text-body-sm font-body-sm text-on-surface-variant/80 mt-0.5">Frontend emphasis, JavaScript deep dive, Git flow.</p>
+              </div>
+              <div class="relative group">
+                <div class="absolute -left-[27px] top-1.5 h-3 w-3 rounded-full bg-secondary shadow-[0_0_8px_rgba(217,70,239,0.8)] ring-4 ring-surface-container-low"></div>
+                <div class="flex items-center justify-between">
+                  <h4 class="text-label-md font-label-md font-semibold text-on-surface">Hackathon Finalist 2024</h4>
+                  <span class="text-label-sm font-code-sm text-secondary font-medium">Fall 2024</span>
+                </div>
+                <p class="text-body-sm font-body-sm text-on-surface-variant">University Annual Hack Sprint</p>
+                <p class="text-body-sm font-body-sm text-on-surface-variant/80 mt-0.5">Built an accessibility helper tool in 36 hours with a 3-student team.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="py-14 border-b border-outline-variant/30" id="skills">
+      <div class="space-y-2 mb-8">
+        <div class="inline-flex items-center gap-1.5 font-code-sm text-code-sm text-primary font-semibold">
+          <span class="material-symbols-outlined text-[16px]" data-icon="build">build</span>
+          <span>02. TECHNICAL TOOLSET</span>
+        </div>
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div>
+            <h2 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg-mobile md:font-headline-lg text-on-surface">Skills &amp; Capabilities</h2>
+            <p class="text-body-md font-body-md text-on-surface-variant max-w-xl">An honest appraisal of tools and languages I actively use in coursework, side projects, and team hackathons.</p>
+          </div>
+          <span class="text-label-sm font-label-sm px-3 py-1 bg-surface-container-high rounded-full text-on-surface border border-outline-variant/50 self-start md:self-auto">Course-Verified &amp; Self-Directed</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="tier-card rounded-xl p-5 flex flex-col justify-between">
+          <div>
+            <div class="h-10 w-10 rounded-lg bg-surface-container flex items-center justify-center text-primary mb-3">
+              <span class="material-symbols-outlined" data-icon="desktop_windows">desktop_windows</span>
+            </div>
+            <h3 class="text-headline-sm font-headline-sm text-on-surface mb-1">Frontend &amp; Web</h3>
+            <p class="text-body-sm font-body-sm text-on-surface-variant mb-4">Core browser building blocks and modern interfaces.</p>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container text-on-surface font-code-sm text-code-sm border border-outline-variant/40">HTML5</span>
+              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container text-on-surface font-code-sm text-code-sm border border-outline-variant/40">CSS3 / Tailwind</span>
+              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container text-on-surface font-code-sm text-code-sm border border-outline-variant/40">JavaScript (ES6+)</span>
+              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container text-on-surface font-code-sm text-code-sm border border-outline-variant/40">React Basics</span>
+              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container text-on-surface font-code-sm text-code-sm border border-outline-variant/40">Responsive Design</span>
+            </div>
+          </div>
+          <div class="mt-4 pt-3 border-t border-outline-variant/30 flex items-center justify-between text-label-sm font-label-sm text-primary">
+            <span>Primary Focus</span>
+            <span class="material-symbols-outlined text-[16px]" data-icon="star">star</span>
+          </div>
+        </div>
+
+        <div class="tier-card rounded-xl p-5 flex flex-col justify-between">
+          <div>
+            <div class="h-10 w-10 rounded-lg bg-surface-container flex items-center justify-center text-primary mb-3">
+              <span class="material-symbols-outlined" data-icon="terminal">terminal</span>
+            </div>
+            <h3 class="text-headline-sm font-headline-sm text-on-surface mb-1">Tools &amp; Workflow</h3>
+            <p class="text-body-sm font-body-sm text-on-surface-variant mb-4">Daily developer toolchain and debugging utilities.</p>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container text-on-surface font-code-sm text-code-sm border border-outline-variant/40">Git &amp; GitHub</span>
+              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container text-on-surface font-code-sm text-code-sm border border-outline-variant/40">VS Code</span>
+              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container text-on-surface font-code-sm text-code-sm border border-outline-variant/40">Chrome DevTools</span>
+              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container text-on-surface font-code-sm text-code-sm border border-outline-variant/40">Terminal / CLI</span>
+              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container text-on-surface font-code-sm text-code-sm border border-outline-variant/40">Vite Bundler</span>
+            </div>
+          </div>
+          <div class="mt-4 pt-3 border-t border-outline-variant/30 flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant">
+            <span>Daily Environment</span>
+            <span class="material-symbols-outlined text-[16px]" data-icon="check">check</span>
+          </div>
+        </div>
+
+        <div class="tier-card rounded-xl p-5 flex flex-col justify-between">
+          <div>
+            <div class="h-10 w-10 rounded-lg bg-surface-container flex items-center justify-center text-primary mb-3">
+              <span class="material-symbols-outlined" data-icon="cloud_upload">cloud_upload</span>
+            </div>
+            <h3 class="text-headline-sm font-headline-sm text-on-surface mb-1">Hosting &amp; Deploy</h3>
+            <p class="text-body-sm font-body-sm text-on-surface-variant mb-4">Cloud platforms for continuous publishing.</p>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container text-on-surface font-code-sm text-code-sm border border-outline-variant/40">GitHub Pages</span>
+              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container text-on-surface font-code-sm text-code-sm border border-outline-variant/40">Vercel</span>
+              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container text-on-surface font-code-sm text-code-sm border border-outline-variant/40">Firebase Hosting</span>
+              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container text-on-surface font-code-sm text-code-sm border border-outline-variant/40">Netlify</span>
+            </div>
+          </div>
+          <div class="mt-4 pt-3 border-t border-outline-variant/30 flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant">
+            <span>CI / CD Ready</span>
+            <span class="material-symbols-outlined text-[16px]" data-icon="rocket_launch">rocket_launch</span>
+          </div>
+        </div>
+
+        <div class="tier-card rounded-xl p-5 flex flex-col justify-between">
+          <div>
+            <div class="h-10 w-10 rounded-lg bg-surface-container flex items-center justify-center text-primary mb-3">
+              <span class="material-symbols-outlined" data-icon="memory">memory</span>
+            </div>
+            <h3 class="text-headline-sm font-headline-sm text-on-surface mb-1">Foundations</h3>
+            <p class="text-body-sm font-body-sm text-on-surface-variant mb-4">Academic algorithms and engineering concepts.</p>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container text-on-surface font-code-sm text-code-sm border border-outline-variant/40">Data Structures</span>
+              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container text-on-surface font-code-sm text-code-sm border border-outline-variant/40">OOP Paradigms</span>
+              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container text-on-surface font-code-sm text-code-sm border border-outline-variant/40">Web a11y (ARIA)</span>
+              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container text-on-surface font-code-sm text-code-sm border border-outline-variant/40">REST APIs</span>
+            </div>
+          </div>
+          <div class="mt-4 pt-3 border-t border-outline-variant/30 flex items-center justify-between text-label-sm font-label-sm text-secondary font-medium">
+            <span>CS Curriculum</span>
+            <span class="material-symbols-outlined text-[16px]" data-icon="verified">verified</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="py-14 border-b border-outline-variant/30" id="projects">
+      <div class="space-y-2 mb-8">
+        <div class="inline-flex items-center gap-1.5 font-code-sm text-code-sm text-primary font-semibold">
+          <span class="material-symbols-outlined text-[16px]" data-icon="folder_special">folder_special</span>
+          <span>03. SELECTED WORK</span>
+        </div>
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div>
+            <h2 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg-mobile md:font-headline-lg text-on-surface">Featured Projects</h2>
+            <p class="text-body-md font-body-md text-on-surface-variant max-w-xl">Authentic coursework and personal software projects highlighting practical code structure and real user feedback.</p>
+          </div>
+          <div class="inline-flex p-1 bg-surface-container rounded-lg border border-outline-variant/50" role="tablist">
+            <button class="project-filter-btn px-3 py-1 text-label-sm font-label-sm rounded-md bg-primary-container text-on-primary shadow-[0_0_10px_rgba(126,34,206,0.5)] font-semibold" data-filter="all" type="button">All</button>
+            <button class="project-filter-btn px-3 py-1 text-label-sm font-label-sm rounded-md text-on-surface-variant hover:text-primary transition-colors" data-filter="classwork" type="button">Classwork</button>
+            <button class="project-filter-btn px-3 py-1 text-label-sm font-label-sm rounded-md text-on-surface-variant hover:text-primary transition-colors" data-filter="personal" type="button">Personal Practice</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="projects-container">
+
+        <!-- Project 1 -->
+        <article class="project-card tier-card rounded-2xl overflow-hidden flex flex-col justify-between" data-category="classwork">
+          <div>
+            <div class="relative aspect-video w-full overflow-hidden bg-surface-container-high border-b border-outline-variant/40">
+              <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Campus Study Buddy interface mockup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvAPelJ8ik0RFWom2ErdA2RdE21maah7zPnkNRimRRgmNr1R57kcmp2JNTytYkIgWfl2T9srQXJXh79GNQ9scePdkAy4bPh2PDp88HsGZJu99BcOEF1EDLla-BAV55IvMTxJ8xO_npLJdbuUm8Nqith31o0j_0Kn4ZgzYPWLpCeQe5lwSPGkxoJKSwi-3PAyrdIQYvXnW5CHbGGp8U7n4QX5qZWImr2v44lF_m7MNZKWkeTlZKrdUE">
+              <span class="absolute top-3 left-3 bg-primary-container text-on-primary text-label-sm font-label-sm px-2.5 py-0.5 rounded-full shadow-sm">Classwork (CS320)</span>
+              <span class="absolute top-3 right-3 bg-surface/90 backdrop-blur-sm text-on-surface text-label-sm font-label-sm px-2 py-0.5 rounded-md border border-outline-variant/50 font-code-sm">Team of 3</span>
+            </div>
+            <div class="p-6 space-y-4">
+              <div>
+                <h3 class="text-headline-md font-headline-md text-on-surface font-bold">Campus Study Buddy</h3>
+                <p class="text-body-sm font-body-sm text-on-surface-variant mt-1.5 leading-relaxed">Web application designed for peer tutoring, study room bookings, and course session matching across academic departments.</p>
+              </div>
+              <div class="bg-surface-container p-3.5 rounded-lg border border-outline-variant/30 space-y-2">
+                <div class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-primary text-[18px]" data-icon="badge">badge</span>
+                  <span class="text-label-sm font-label-sm font-semibold text-on-surface">Role: Lead Frontend Developer</span>
+                </div>
+                <p class="text-body-sm font-body-sm text-on-surface-variant">Architected dynamic weekly schedule grid using native CSS Grid, local state storage, and responsive form validation for booking tutors.</p>
+              </div>
+              <div class="flex flex-wrap gap-1.5 pt-1">
+                <span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-label-sm font-code-sm border border-outline-variant/40">HTML5</span>
+                <span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-label-sm font-code-sm border border-outline-variant/40">CSS Grid</span>
+                <span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-label-sm font-code-sm border border-outline-variant/40">JavaScript</span>
+                <span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-label-sm font-code-sm border border-outline-variant/40">Vercel</span>
+              </div>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-2 border-t border-outline-variant/30 flex items-center justify-between">
+            <a class="inline-flex items-center gap-1.5 text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors" href="https://github.com/borceskarylle/campus-study-buddy" rel="noopener noreferrer" target="_blank">
+              <span class="material-symbols-outlined text-[18px]" data-icon="code">code</span><span>Source Code</span>
+            </a>
+            <a class="inline-flex items-center gap-1.5 text-label-md font-label-md text-primary font-semibold hover:underline" href="https://example.com/demo/study-buddy" rel="noopener noreferrer" target="_blank">
+              <span>Live Demo</span><span class="material-symbols-outlined text-[18px]" data-icon="open_in_new">open_in_new</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card tier-card rounded-2xl overflow-hidden flex flex-col justify-between" data-category="classwork">
+          <div>
+            <div class="relative aspect-video w-full overflow-hidden bg-surface-container-high border-b border-outline-variant/40">
+              <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="EcoTrack Carbon Counter dashboard mockup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCN0HHM0_LwCETLxBQpuhYSkok_SERcBvppf5tvFoFsu8fFDgRZb194tmPWPPu7mZEMt5Z6k_E_AvsQ7Q2APkmXcVAMkWEx4k3aclmdsEEXNRpxUR0LclNqpNUncx9sO-N5miTDdjXt0Cg6tgxJXO0bEqwa_Bbo5mzrJjMTYg0X44i-2OvfrdcDuQV4icS-BLtJSCPGj7iNLExXE6AVuyVfKfXr4NNKRHdWNjWbwZbexmpz0T9uKqO0">
+              <span class="absolute top-3 left-3 bg-secondary text-on-secondary text-label-sm font-label-sm px-2.5 py-0.5 rounded-full shadow-sm">Classwork (CS210)</span>
+              <span class="absolute top-3 right-3 bg-surface/90 backdrop-blur-sm text-on-surface text-label-sm font-label-sm px-2 py-0.5 rounded-md border border-outline-variant/50 font-code-sm">Interactive Lab</span>
+            </div>
+            <div class="p-6 space-y-4">
+              <div>
+                <h3 class="text-headline-md font-headline-md text-on-surface font-bold">EcoTrack Carbon Counter</h3>
+                <p class="text-body-sm font-body-sm text-on-surface-variant mt-1.5 leading-relaxed">Interactive course assignment calculating everyday carbon footprints with dynamic metric visualization, comparative averages, and persistence.</p>
+              </div>
+              <div class="bg-surface-container p-3.5 rounded-lg border border-outline-variant/30 space-y-2">
+                <div class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-primary text-[18px]" data-icon="donut_large">donut_large</span>
+                  <span class="text-label-sm font-label-sm font-semibold text-on-surface">Role: UI &amp; Data Visualization</span>
+                </div>
+                <p class="text-body-sm font-body-sm text-on-surface-variant">Integrated Chart.js client-side graphing, customized color systems to meet WCAG contrast, and wrote clean LocalStorage synchronization.</p>
+              </div>
+              <div class="flex flex-wrap gap-1.5 pt-1">
+                <span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-label-sm font-code-sm border border-outline-variant/40">JavaScript</span>
+                <span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-label-sm font-code-sm border border-outline-variant/40">Chart.js</span>
+                <span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-label-sm font-code-sm border border-outline-variant/40">LocalStorage</span>
+                <span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-label-sm font-code-sm border border-outline-variant/40">GitHub Pages</span>
+              </div>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-2 border-t border-outline-variant/30 flex items-center justify-between">
+            <a class="inline-flex items-center gap-1.5 text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors" href="https://github.com/borceskarylle/ecotrack-counter" rel="noopener noreferrer" target="_blank">
+              <span class="material-symbols-outlined text-[18px]" data-icon="code">code</span><span>Source Code</span>
+            </a>
+            <a class="inline-flex items-center gap-1.5 text-label-md font-label-md text-primary font-semibold hover:underline" href="https://example.com/demo/ecotrack" rel="noopener noreferrer" target="_blank">
+              <span>Live Demo</span><span class="material-symbols-outlined text-[18px]" data-icon="open_in_new">open_in_new</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card tier-card rounded-2xl overflow-hidden flex flex-col justify-between" data-category="personal">
+          <div>
+            <div class="relative aspect-video w-full overflow-hidden bg-surface-container-high border-b border-outline-variant/40">
+              <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="DevNotes CLI and Web Reader mockup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYXyU_MKWVrLnJupYfG-U6sKB4QhErzXN5NAKCOUuRXBikr-xrXj8WD_AXkhASbYCSt_bKIj0mw4m3Q62UjC_ZFLilugqPn9ciiqMCHhZuhkhfOnpQQpsTnjsMcWJgnGTVcJevAywfWAGaZsRV3ZCLXkj-jYikuorQ5YNtQALGIcPUg25s5cRHJ5gmW1SO0dfMZILndIQuFx3I6lOvEjJ4iGTqoRJ00K4IUEHL1U8cC9RvAoh3-dSS">
+              <span class="absolute top-3 left-3 bg-primary text-on-primary text-label-sm font-label-sm px-2.5 py-0.5 rounded-full shadow-sm">Personal Practice</span>
+              <span class="absolute top-3 right-3 bg-surface/90 backdrop-blur-sm text-on-surface text-label-sm font-label-sm px-2 py-0.5 rounded-md border border-outline-variant/50 font-code-sm">Solo Project</span>
+            </div>
+            <div class="p-6 space-y-4">
+              <div>
+                <h3 class="text-headline-md font-headline-md text-on-surface font-bold">DevNotes CLI &amp; Web Reader</h3>
+                <p class="text-body-sm font-body-sm text-on-surface-variant mt-1.5 leading-relaxed">Markdown-based technical cheatsheet and documentation reader designed to quickly search syntax and algorithm definitions directly in the browser.</p>
+              </div>
+              <div class="bg-surface-container p-3.5 rounded-lg border border-outline-variant/30 space-y-2">
+                <div class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-primary text-[18px]" data-icon="code_blocks">code_blocks</span>
+                  <span class="text-label-sm font-label-sm font-semibold text-on-surface">Role: Sole Developer</span>
+                </div>
+                <p class="text-body-sm font-body-sm text-on-surface-variant">Configured client-side markdown parsing, instant keyboard shortcuts (Cmd+K), and automated static deployment via GitHub Pages workflows.</p>
+              </div>
+              <div class="flex flex-wrap gap-1.5 pt-1">
+                <span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-label-sm font-code-sm border border-outline-variant/40">Tailwind CSS</span>
+                <span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-label-sm font-code-sm border border-outline-variant/40">Markdown Parser</span>
+                <span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-label-sm font-code-sm border border-outline-variant/40">Vanilla JS</span>
+                <span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-label-sm font-code-sm border border-outline-variant/40">GitHub Pages</span>
+              </div>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-2 border-t border-outline-variant/30 flex items-center justify-between">
+            <a class="inline-flex items-center gap-1.5 text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors" href="https://github.com/borceskarylle/devnotes-cli" rel="noopener noreferrer" target="_blank">
+              <span class="material-symbols-outlined text-[18px]" data-icon="code">code</span><span>Source Code</span>
+            </a>
+            <a class="inline-flex items-center gap-1.5 text-label-md font-label-md text-primary font-semibold hover:underline" href="https://example.com/demo/devnotes" rel="noopener noreferrer" target="_blank">
+              <span>Live Demo</span><span class="material-symbols-outlined text-[18px]" data-icon="open_in_new">open_in_new</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="project-card tier-card rounded-2xl overflow-hidden flex flex-col justify-between" data-category="personal">
+          <div>
+            <div class="relative aspect-video w-full overflow-hidden bg-surface-container-high border-b border-outline-variant/40">
+              <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Accessible Recipe Finder interface mockup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAz5wg6FTbXBKQGnwzUoz_W3DXoZALs0n7HQp3faK3No-yRNriFnYFNR8JxiwLRocur162E8ZOpDtN2SrDsKR6MLw9G9dXP1wBwktmZNp0RVJn3JVMhZlsmOr6sUpvWqzBFM7y58uh0Wrjd0xPmTX-BV6IsbfMt8eYbmB65pek9uGhJ2eNIJC_4Ry2iPDQewIw9lEjm_pfcFwHsJaoHbzW_gIuFcir756rEfBf8IDn4_dl_brxBHTIQ">
+              <span class="absolute top-3 left-3 bg-primary text-on-primary text-label-sm font-label-sm px-2.5 py-0.5 rounded-full shadow-sm">Personal Practice</span>
+              <span class="absolute top-3 right-3 bg-secondary-fixed/60 text-secondary text-label-sm font-label-sm px-2 py-0.5 rounded-md border border-secondary/30 font-code-sm">a11y Focused</span>
+            </div>
+            <div class="p-6 space-y-4">
+              <div>
+                <h3 class="text-headline-md font-headline-md text-on-surface font-bold">Accessible Recipe Finder</h3>
+                <p class="text-body-sm font-body-sm text-on-surface-variant mt-1.5 leading-relaxed">Inclusive culinary assistant engineered specifically for keyboard navigation, screen reader accessibility, and distraction-free cooking modes.</p>
+              </div>
+              <div class="bg-surface-container p-3.5 rounded-lg border border-outline-variant/30 space-y-2">
+                <div class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-primary text-[18px]" data-icon="accessibility_new">accessibility_new</span>
+                  <span class="text-label-sm font-label-sm font-semibold text-on-surface">Role: Frontend &amp; a11y Audit</span>
+                </div>
+                <p class="text-body-sm font-body-sm text-on-surface-variant">Achieved 100% Lighthouse Accessibility score using strict landmark roles, live regions (<code class="font-code-sm text-primary">aria-live</code>), and skip-links for screen reader users.</p>
+              </div>
+              <div class="flex flex-wrap gap-1.5 pt-1">
+                <span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-label-sm font-code-sm border border-outline-variant/40">Semantic HTML</span>
+                <span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-label-sm font-code-sm border border-outline-variant/40">Vanilla JS</span>
+                <span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-label-sm font-code-sm border border-outline-variant/40">ARIA Landmark Roles</span>
+                <span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-label-sm font-code-sm border border-outline-variant/40">REST Recipe API</span>
+              </div>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-2 border-t border-outline-variant/30 flex items-center justify-between">
+            <a class="inline-flex items-center gap-1.5 text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors" href="https://github.com/borceskarylle/accessible-recipes" rel="noopener noreferrer" target="_blank">
+              <span class="material-symbols-outlined text-[18px]" data-icon="code">code</span><span>Source Code</span>
+            </a>
+            <a class="inline-flex items-center gap-1.5 text-label-md font-label-md text-primary font-semibold hover:underline" href="https://example.com/demo/recipes" rel="noopener noreferrer" target="_blank">
+              <span>Live Demo</span><span class="material-symbols-outlined text-[18px]" data-icon="open_in_new">open_in_new</span>
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- HOSTING CHECKLIST -->
+    <section class="py-12 border-b border-outline-variant/30">
+      <div class="tier-card rounded-2xl p-6 md:p-8 bg-surface-container-low border border-outline-variant/40">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+          <div class="flex items-center gap-3">
+            <div class="p-2.5 rounded-xl bg-primary-container text-on-primary">
+              <span class="material-symbols-outlined text-2xl" data-icon="checklist">checklist</span>
+            </div>
+            <div>
+              <h3 class="text-headline-sm font-headline-sm text-on-surface font-bold">Beginner Hosting &amp; Verification Checklist</h3>
+              <p class="text-body-sm font-body-sm text-on-surface-variant">Self-evaluation checklist verifying this site is pre-configured for GitHub Pages, Vercel, or Firebase.</p>
+            </div>
+          </div>
+          <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-secondary/20 text-secondary border border-secondary/30 text-label-sm font-label-sm self-start sm:self-auto font-semibold">
+            <span class="material-symbols-outlined text-[16px]" data-icon="verified">verified</span>
+            4 of 4 Verified
+          </span>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="p-4 rounded-xl bg-surface-container border border-outline-variant/30">
+            <div class="flex items-center gap-2 text-secondary font-semibold text-label-md font-label-md mb-1">
+              <span class="material-symbols-outlined text-[20px]" data-icon="check_circle">check_circle</span><span>Semantic HTML5</span>
+            </div>
+            <p class="text-body-sm font-body-sm text-on-surface-variant">Valid header, nav, main, section, article, and footer hierarchy.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-surface-container border border-outline-variant/30">
+            <div class="flex items-center gap-2 text-secondary font-semibold text-label-md font-label-md mb-1">
+              <span class="material-symbols-outlined text-[20px]" data-icon="check_circle">check_circle</span><span>Relative Asset Paths</span>
+            </div>
+            <p class="text-body-sm font-body-sm text-on-surface-variant">No local Windows C:\ or Mac file:/// paths. Fully portable.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-surface-container border border-outline-variant/30">
+            <div class="flex items-center gap-2 text-secondary font-semibold text-label-md font-label-md mb-1">
+              <span class="material-symbols-outlined text-[20px]" data-icon="check_circle">check_circle</span><span>Root index.html</span>
+            </div>
+            <p class="text-body-sm font-body-sm text-on-surface-variant">Entrypoint correctly positioned at the repository root level.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-surface-container border border-outline-variant/30">
+            <div class="flex items-center gap-2 text-secondary font-semibold text-label-md font-label-md mb-1">
+              <span class="material-symbols-outlined text-[20px]" data-icon="check_circle">check_circle</span><span>Responsive Viewport</span>
+            </div>
+            <p class="text-body-sm font-body-sm text-on-surface-variant">Fully fluid CSS viewport setup tested on both mobile and desktop.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="py-14" id="contact">
+      <div class="space-y-2 mb-8">
+        <div class="inline-flex items-center gap-1.5 font-code-sm text-code-sm text-primary font-semibold">
+          <span class="material-symbols-outlined text-[16px]" data-icon="alternate_email">alternate_email</span>
+          <span>04. GET IN TOUCH</span>
+        </div>
+        <h2 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg-mobile md:font-headline-lg text-on-surface">Let’s Connect</h2>
+        <p class="text-body-md font-body-md text-on-surface-variant max-w-xl">Interested in discussing an internship, asking about my coursework, or collaborating on an open-source project? My inbox is always open.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div class="lg:col-span-7 tier-card rounded-2xl p-6 md:p-8 space-y-6">
+          <div class="space-y-2">
+            <span class="text-label-sm font-label-sm text-on-surface-variant font-medium">Official Student Email</span>
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 bg-surface-container rounded-xl border border-outline-variant/40">
+              <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary text-2xl" data-icon="mail">mail</span>
+                <span class="font-code-sm text-body-md font-semibold text-on-surface select-all">borceskaryllemj@gmail.com</span>
+              </div>
+              <a class="inline-flex items-center justify-center gap-1.5 px-4 py-2 bg-primary-container text-on-primary rounded-lg text-label-md font-label-md hover:bg-primary shadow-[0_0_10px_rgba(126,34,206,0.4)] hover:shadow-[0_0_15px_rgba(168,85,247,0.6)] transition-all duration-200" href="mailto:borceskaryllemj@gmail.com">
+                <span>Send Email</span>
+                <span class="material-symbols-outlined text-[16px]" data-icon="arrow_outward">arrow_outward</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-xl bg-surface-container border border-outline-variant/40 flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary text-[20px] mt-0.5" data-icon="info">info</span>
+            <div class="space-y-1 text-body-sm font-body-sm text-on-surface-variant">
+              <span class="font-semibold text-on-surface block">No backend server required</span>
+              <p>A direct <code class="font-code-sm bg-surface-container-high px-1 py-0.5 rounded text-primary">mailto:</code> link is configured above — clicking opens your default mail client directly. This satisfies static hosting requirements seamlessly.</p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-2 text-label-sm font-label-sm text-on-surface-variant">
+            <span class="material-symbols-outlined text-secondary text-[18px]" data-icon="schedule">schedule</span>
+            <span>Response expectation: Usually replies within 24 hours during academic terms.</span>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 space-y-4">
+          <div class="tier-card rounded-2xl p-6 space-y-4">
+            <h3 class="text-headline-sm font-headline-sm text-on-surface font-bold">Profiles &amp; Documents</h3>
+
+            <a class="flex items-center justify-between p-3.5 rounded-xl border border-outline-variant/40 hover:bg-surface-container-high transition-colors group" href="https://github.com/borceskarylle" rel="noopener noreferrer" target="_blank">
+              <div class="flex items-center gap-3">
+                <div class="h-9 w-9 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface group-hover:text-primary transition-colors">
+                  <span class="material-symbols-outlined" data-icon="code">code</span>
+                </div>
+                <div>
+                  <span class="block text-label-md font-label-md font-semibold text-on-surface">GitHub</span>
+                  <span class="block text-body-sm font-code-sm text-outline">github.com/borceskarylle</span>
+                </div>
+              </div>
+              <span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors" data-icon="open_in_new">open_in_new</span>
+            </a>
+
+            <a class="flex items-center justify-between p-3.5 rounded-xl border border-outline-variant/40 hover:bg-surface-container-high transition-colors group" href="https://linkedin.com/in/borceskarylle" rel="noopener noreferrer" target="_blank">
+              <div class="flex items-center gap-3">
+                <div class="h-9 w-9 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface group-hover:text-primary transition-colors">
+                  <span class="material-symbols-outlined" data-icon="share">share</span>
+                </div>
+                <div>
+                  <span class="block text-label-md font-label-md font-semibold text-on-surface">LinkedIn</span>
+                  <span class="block text-body-sm font-code-sm text-outline">linkedin.com/in/borceskarylle</span>
+                </div>
+              </div>
+              <span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors" data-icon="open_in_new">open_in_new</span>
+            </a>
+
+            <a class="flex items-center justify-between p-3.5 rounded-xl border border-primary/30 bg-primary/5 hover:bg-primary/10 transition-colors group" download="Karylle_Borces_Resume.pdf" href="assets/resume.pdf">
+              <div class="flex items-center gap-3">
+                <div class="h-9 w-9 rounded-lg bg-primary-container text-on-primary flex items-center justify-center shadow-[0_0_10px_rgba(126,34,206,0.4)]">
+                  <span class="material-symbols-outlined" data-icon="picture_as_pdf">picture_as_pdf</span>
+                </div>
+                <div>
+                  <span class="block text-label-md font-label-md font-semibold text-primary">Download Resume (PDF)</span>
+                  <span class="block text-body-sm font-body-sm text-outline">Updated for Summer 2025</span>
+                </div>
+              </div>
+              <span class="material-symbols-outlined text-primary" data-icon="download">download</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-surface-container-low border-t border-outline-variant/30 mt-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col md:flex-row items-center justify-between gap-6 w-full">
+      <div class="space-y-1 text-center md:text-left">
+        <a class="text-headline-sm font-headline-sm font-bold text-on-surface tracking-tight" href="#home">Karylle Borces</a>
+        <p class="text-body-sm font-body-sm text-on-surface-variant">© 2024 Karylle Borces. Crafted with precision &amp; code. Built for modern web hosting.</p>
+      </div>
+
+      <nav aria-label="Footer Navigation" class="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
+        <a class="text-primary font-label-sm text-label-sm hover:text-primary-fixed-dim transition-colors duration-150" href="#home">Home</a>
+        <a class="text-on-surface-variant font-label-sm text-label-sm hover:text-primary transition-colors duration-150" href="#about">About</a>
+        <a class="text-on-surface-variant font-label-sm text-label-sm hover:text-primary transition-colors duration-150" href="#skills">Skills</a>
+        <a class="text-on-surface-variant font-label-sm text-label-sm hover:text-primary transition-colors duration-150" href="#projects">Projects</a>
+        <a class="text-on-surface-variant font-label-sm text-label-sm hover:text-primary transition-colors duration-150" href="#contact">Contact</a>
+        <a class="text-on-surface-variant font-label-sm text-label-sm hover:text-primary transition-colors duration-150" href="https://github.com/borceskarylle" rel="noopener noreferrer" target="_blank">GitHub</a>
+        <a class="text-on-surface-variant font-label-sm text-label-sm hover:text-primary transition-colors duration-150" href="https://linkedin.com/in/borceskarylle" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg border border-outline-variant/50 text-label-sm font-label-sm text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" href="#home" title="Back to Top">
+          <span class="material-symbols-outlined text-[16px]" data-icon="arrow_upward">arrow_upward</span>
+          <span>Top</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Custom JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
